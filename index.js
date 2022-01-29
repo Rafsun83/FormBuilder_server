@@ -4,14 +4,14 @@ const ObjectId = require('mongodb').ObjectId
 const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 5000
-// const username = formbuilder
-// const pass = cteptoTXaHW6zZRl
+const username = formbuilder
+const pass = cteptoTXaHW6zZRl
 app.use(cors())
 app.use(express.json())
 
 
 //connect database username and password
-const uri = `mongodb+srv://formbuilder:cteptoTXaHW6zZRl@cluster0.u5ucb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${username}:${pass}@cluster0.u5ucb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function run() {
